@@ -1,68 +1,47 @@
 ---
 extends: minimal.j2
 default_block: main
-title: Open Source Projects
-description: Open Source Projects Authored and Contributed to
+title: TelFit
+description: 
 ---
 
-<h1>Open Source Projects</h1>
+<h1>TelFit</h1>
+<h2>An Object-Oriented Framework for Fitting the Telluric Absorption Spectrum</h2>
 <hr/>
 
-<h2><a href="http://astroml.org">AstroML</a></h2>
-<p>AstroML is a Python module for machine learning and data mining in
-Astronomy and Astrophysics.  It contains many commonly-used tools from
-the astronomical literature, and hundreds of examples of their use.  I
-wrote this package to accompany our textbook, <i><a href="http://www.amazon.com/Statistics-Mining-Machine-Learning-Astronomy/dp/0691151687/" target="tab">Statistics, Data Mining,
-and Machine Learning in Astronomy</a></i>.</p>
-<hr/>
+<p>TelFit is a Python code I wrote specifically to fit the telluric absorption spectrum in astronomical data. I have been using it extensively in my project searching for companions to A and B stars, but it is sufficiently general that it should work on any data. The code is essentially a wrapper to <a href="http://rtweb.aer.com/lblrtm.html">LBLRTM</a>, the Line-By-Line Radiative Transfer Model. It vastly simplifies the process of generating a telluric model, and can efficiently remove the telluric absorption lines in my high-resolution echelle spectra of A and B stars. I have done some test on late-type stellar spectra as well with good results. I am currently working on a paper officially announcing this code and describing it in some detail; check back here for the link once it is up! You can download the source code below, which includes both LBLRTM and my wrapper. See my <a href="http://github.com/kgullikson88/Telluric-Fitter">GitHub page</a> for details and for the "bleeding edge" code.
+</p>
 
-<h2><a href="http://scikit-learn.org">Scikit-Learn</a></h2>
-<p>Scikit-Learn is a powerful and extensive machine learning library
-written in Python.  I have
-contributed in many areas of the project, but primarily in the area of
-generalized N-point problems & manifold learning.</p>
-<hr/>
+<p>TelFit is packaged with LBLRTM. If you download TelFit, please also go <a href="http://rtweb.aer.com/lblrtm_download.php" target="_blank">here</a> to inform the developers of LBLRTM. This helps them keep track of who is using the code and informs future code development.
+</p>
 
-<h2><a href="http://github.com/jakevdp/mpld3">mpld3</a></h2>
-<p>mpld3 is a project which leverages <a href="http://d3js.org/">D3js</a> to
-produce interactive browser-based visualizations from matplotlib figures.
-Though interactive, the resulting figures are not tied to the Python kernel,
-so they can be used statically on web pages and blogs.
-To see mpld3 in action, take a look at my initial
-<a href="http://jakevdp.github.io/blog/2013/12/19/a-d3-viewer-for-matplotlib/">blog post</a>, or see some examples
-<a href="http://nbviewer.ipython.org/github/jakevdp/mpld3/tree/master/examples/">here</a> and
-<a href="http://nbviewer.ipython.org/gist/mwaskom/8066418">here</a>.</p>
-<hr/>
+<p>I will try my best to respond to questions about/problems with the code. However, I am busy and may not be able to help your or may not respond for quite some time. I encourage you to submit issues <a href="https://github.com/kgullikson88/Telluric-Fitter/issues">here</a> rather than emailing me.</p>
 
-<h2><a href="http://github.com/jakevdp/scidb-py">SciDB-Py</a></h2>
-<p>SciDB-Py is a set of python wrappers for the
-<a href="http://scidb.org/">SciDB</a> project which provides a natural,
-numpy-like interface to large-scale array-based computations.  The project is
-a collaboration between myself and the 
-folks at <a href="http://www.paradigm4.com/">Paradigm4</a>.</p>
-<hr/>
+<h3> <a href="{{ media_url('code/TelFit-0.3.tar.gz') }}"> TelFit code</a> </h3>
+<h3> <a href="{{ media_url('pdfs/TelFit_Manual.pdf') }}">TelFit Manual (pdf)</a> </h3>
 
-<h2><a href="http://scipy.org">Scipy</a></h2>
-<p>Scipy is a collection of Python tools for scientific computing.  My main
-contributions have been in the sparse matrix toolkit, primarily in iterative
-sparse matrix decompositions and fast graph algorithms.</p>
-<hr/>
-
-<h2><a href="http://github.com/jakevdp/JSAnimation">JSAnimation</a></h2>
-<p>JSAnimation includes an HTML5/Javascript viewer for matplotlib animations,
-created via a new matplotlib animation writer.  It also has an IPython
-display hook for ease of use with IPython notebook and qtconsole.  See
-an example of the code in action <a href="http://nbviewer.ipython.org/urls/raw.github.com/jakevdp/JSAnimation/master/animation_example.ipynb">here</a>.</p>
-<hr/>
-
-<h2><a href="http://github.com/jakevdp">Other Packages</a></h2>
-<p>I also have made numerous small contributions to projects such as
-<a href="http://www.numpy.org">NumPy</a>,
-<a href="http://matplotlib.org">Matplotlib</a>,
-<a href="http://ipython.org">IPython</a>,
-<a href="http://hyde.github.io/">Hyde</a>,
-<a href="http://getpelican.com">Pelican</a>,
-and others, and have open-sourced much of my other code and teaching materials.
-See my <a href="http://github.com/jakevdp">GitHub profile</a> for details.</p>
 
 <hr/>
+
+
+<h2>Frequently Asked Questions</h2>
+
+<ol>
+<li>I am getting an error about the keyword 'TelluricModeling' not set.<br><br>
+     
+     During the installation process, you should have been prompted to let TelFit put
+     a command like "export TELLURICMODELING=/home/user/TelFit/" in you bash setup file (~/.bashrc). If you did this, you need to source that script. If you did not, you will need to export the TELLURICMODELING environment variable to point to the directory containing your rundir directories.<br><br></li>
+
+<li>TelFit is converging on a solution with too abundances that are too low and a 
+    resolution that is too high.<br><br>
+    
+    I am not sure why it does this, but constraining the resolution to be close to the actual value usually helps. You can also constrain the molecule abundance that is causing problem, but that is usually not known as well as the detector resolution.<br><br></li>
+
+<li>The corrected spectra have what appear to be <a href="http://www.ifa.hawaii.edu/~kud/windsfromhotstars/plots/fig2m31fin.gif">P Cygni profiles</a>.<br><br>
+
+    This is a wavelength solution error, and sometimes happens in very deep and very steep telluric lines such as the oxygen bands in the visible spectrum. You can improve the situation with the keyword argument 'wavelength_fit_order' in your Fit() call. Give it an order > 3, which is the default value.<br><br></li>
+
+<li>How do I fit the tellurics when there are other lines present?<br><br>
+    
+    There are several ways around this, and the best one depends on your exact situation. If you have a decent (doesn't need to be great) model for the source spectrum, remove it from the spectrum before the telluric fit. You can also ignore wavelength regions in the cost function calculation with the "IgnoreRegions" command. See the TelFit manual for more details.<br><br></li>
+</ol>

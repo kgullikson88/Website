@@ -1,14 +1,12 @@
 My Personal Web Page, built with [Hyde](http://hyde.github.io/)
 
-See the rendered version at http://www.astro.washington.edu/users/vanderplas
+See the rendered version at http://http://www.as.utexas.edu/~kgulliks/
 
 Building
 ========
 Requires hyde:
 
     pip install hyde
-
-Also pdflatex (for CV to be auto-generated)
 
 Generate version for local development:
 

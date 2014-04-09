@@ -1,13 +1,6 @@
 all: gen
 
-CV: content/media/pdfs/CV.pdf
-
-content/media/pdfs/CV.pdf: CV/CV.tex
-	cd CV; make
-	mkdir -p content/media/pdfs/
-	cp CV/CV.pdf content/media/pdfs/
-
-gen: CV
+gen: 
 	hyde gen
 
 serve: clean gen
@@ -19,5 +12,5 @@ clean:
 gen-production: clean
 	hyde gen -c production.yaml
 
-publish: CV gen-production	
-	rsync -e ssh -r deploy_production/ gateway.astro.washington.edu:/www/astro/users/vanderplas/html/
+publish: gen-production	
+	rsync -e ssh -r deploy_production/ kgulliks@astro.as.utexas.edu:/home/astro/edu/kgulliks/www/

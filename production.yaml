@@ -1,13 +1,13 @@
 extends: site.yaml
 
 mode: production
-media_url: /users/vanderplas/media
-base_url: /users/vanderplas
+media_url: /~kgulliks/media
+base_url: /~kgulliks
 deploy_root: deploy_production
 
 publisher:
     ssh:
         type: hyde.ext.publishers.ssh.SSH
-        username: jakevdp
-        server: gateway.astro.washington.edu
-        target: /www/astro/users/vanderplas/html
+        username: kgulliks
+        server: astro.as.utexas.edu
+        target: /home/astro/edu/kgulliks/www

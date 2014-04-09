@@ -5,6 +5,7 @@ deploy/
 deploy_production/
 .hyde_deps
 content/.hyde_deps
+content/media/code
 
 # LaTeX
 *.aux

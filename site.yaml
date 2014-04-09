@@ -11,15 +11,19 @@ plugins:
     - hyde.ext.plugins.tagger.TaggerPlugin
     - hyde.ext.plugins.syntext.SyntextPlugin
     - hyde.ext.plugins.textlinks.TextlinksPlugin
-context:
-    data:
-        tweet_via: jakevdp
+
+        
 meta:
     nodemeta: meta.yaml
-    created: !!timestamp 2013-04-18 00:00:00
-    author: Jake VanderPlas
-    analytics:
-        id: UA-11762888-1
+    created: !!timestamp 2014-01-10 00:00:00
+    author: Kevin Gullikson
+    
+    
+markdown:
+    extensions:
+        - def_list
+        - tables
+        - headerid
 
 sorter:
     time:

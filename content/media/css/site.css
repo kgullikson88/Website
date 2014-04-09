@@ -62,6 +62,7 @@ body{
     padding: 0;
     margin: 0;
     text-shadow: 0px 2px 0px #efefef;
+    background: #E0E0E0;
 }
 
 #container{
@@ -119,11 +120,11 @@ footer{
     border-radius: 2em;
 }
 .medium {
-    font-size: 12px;
+    font-size: 14px;
     padding: .4em 1.5em .42em;
 }
 .small {
-    font-size: 11px;
+    font-size: 12px;
     padding: .2em 1em .275em;
 }
 
@@ -457,7 +458,7 @@ a.backlink:hover, a.prev:hover, a.next:hover{
   background-color: #F0F3F3;
 }
 .code figcaption {
-  font-size: 10px;
+  font-size: 11px;
   position: absolute;
   bottom: 3px;
   right: 12px;
