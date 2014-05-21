@@ -67,14 +67,15 @@
     
   <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
   {% block content %}
+    
     <div class="wrapper">
       {% block wrapper %}
       <header>
         {% block header %}
         <h1><a href="{{ content_url('') }}">Kevin Gullikson</a></h1>
-	{% endblock header %}
-	{% block nav %}
-	<br>
+        {% endblock header %}
+        {% block nav %}
+        <br>
         <p class="view"><a href="{{ content_url('research.html') }}">Research<small>The things I do all day</small></a></p>
         <p class="view"><a href="{{ content_url('projects.html') }}">TelFit<small>An Object-oriented Python code for fitting the telluric absorption spectrum in astronomical data.</small></a></p>
         
@@ -99,19 +100,21 @@
             {% endif %}
           </ul>
         {% endif %}
-	{% endblock nav %}
+        {% endblock nav %}
 	  
-	{% block media %}
-        <h3>Other Websites</h3>
-        <p class="view"><a href="http://github.com/kgullikson88" target="tab">GitHub</a>
-        <p class="view"><a href="http://www.linkedin.com/profile/view?id=90289262&trk=nav_responsive_tab_profile" target="tab">LinkedIn</a>
+        {% block media %}
+          <h3>Other Websites</h3>
+          <p class="view"><a href="http://github.com/kgullikson88" target="tab">GitHub</a>
+          <p class="view"><a href="http://www.linkedin.com/profile/view?id=90289262&trk=nav_responsive_tab_profile" target="tab">LinkedIn</a>
         
         {% endblock media %}
       </header>
       <section id="main">
-	{% block main %}
-        {{ content }}
-	{% endblock main %}
+        {% filter markdown -%}
+        {% block main %}
+          {{ content }}
+        {% endblock main %}
+        {%- endfilter %}
       </section>
       {% block footer %}
       <footer>
@@ -121,6 +124,7 @@
       {% endblock footer %}
     {% endblock wrapper %}
     </div>
+    
     {% endblock content %}
 
     {% block js %}

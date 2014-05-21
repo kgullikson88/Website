@@ -1,0 +1,32 @@
+---
+extends: minimal.j2
+default_block: main
+title: FAQ
+description: 
+---
+
+Frequently Asked Questions
+============================
+
+  *  ### I am getting an error about the keyword 'TelluricModeling' not set. ###
+     
+
+     During the installation process, you should have been prompted to let TelFit put
+     a command like 
+     <pre><code>export TELLURICMODELING=/home/user/TelFit/</code></pre>     
+     in you bash setup file (~/.bashrc). If you did this, you need to source that script. If you did not, you will need to export the TELLURICMODELING environment variable to point to the directory containing your rundir directories.
+
+  *  ### TelFit is converging on a solution with abundances that are too low and a resolution that is too high. ###
+
+     Constraining the resolution to be close to the actual value usually helps. You can also constrain the molecule abundance that is causing problem, but that is usually not known as well as the detector resolution.
+
+
+  *  ### The corrected spectra have what appear to be [P Cygni profiles]({{media_url('images/P-cygni.pdf ')}}) ###
+
+
+     This is a wavelength solution error, and sometimes happens in very deep and very steep telluric lines such as the oxygen bands in the visible spectrum. You can improve the situation with the keyword argument 'wavelength_fit_order' in your Fit() call. Give it an order > 3, which is the default value.
+
+  *  ### How do I fit the tellurics when there are other lines present? ###
+
+     There are several ways around this, and the best one depends on your exact situation. If you have a decent (doesn't need to be great) model for the source spectrum, remove it from the spectrum before the telluric fit. You can also ignore wavelength regions in the cost function calculation with the "IgnoreRegions" command. See the TelFit manual for more details.
+
