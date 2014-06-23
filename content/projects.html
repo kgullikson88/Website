@@ -1,9 +1,23 @@
 ---
 extends: minimal.j2
-default_block: main
 title: TelFit
 description: 
 ---
+
+
+{% block media %}
+<h3>Other Websites</h3>
+<p class="view"><a href="http://github.com/kgullikson88" target="tab">GitHub</a>
+<p class="view"><a href="http://www.linkedin.com/profile/view?id=90289262&trk=nav_responsive_tab_profile" target="tab">LinkedIn</a>
+<br/>
+<br/>
+<p align="left" style="font-size:80%;color:#000000;">
+<img src="{{media_url('images/TelCorr.jpg')}}"
+     >
+<br>Telluric correction with TelFit</p>
+{% endblock media %}
+
+{% block main %}
 
 # TelFit #
 ## An Object-Oriented Framework for Fitting the Telluric Absorption Spectrum ##
@@ -19,9 +33,11 @@ I will try my best to respond to questions about/problems with the code. However
 
 If you have issues, please check the [FAQ page]({{ content_url('FAQ.html') }})
 
-### [TelFit code]({{ media_url('code/TelFit-0.4.tar.gz') }}) ###
+### <a href={{ media_url('code/TelFit-0.4.tar.gz') }} onClick="_gaq.push(['_trackEvent', 'TelFit', 'Download', 'TelFit Download']);">TelFit code</a>
 ### [TelFit Manual (pdf)]({{ media_url('pdfs/TelFit_Manual.pdf') }})
 
 
 
 
+
+{% endblock main %}
