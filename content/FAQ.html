@@ -44,5 +44,14 @@ Frequently Asked Questions
 
      There are several ways around this, and the best one depends on your exact situation. If you have a decent (doesn't need to be great) model for the source spectrum, remove it from the spectrum before the telluric fit. You can also ignore wavelength regions in the cost function calculation with the "IgnoreRegions" method. See the TelFit manual for more details.
 
+  *  ### I am getting the following message whenever I import TelluricFitter or MakeModel: 
+  <pre>PYSYN_CDBS is undefined; functionality will be SEVERLY crippled </pre>
+
+     This is caused by pysynphot, which does not install all of the data files it needs if you use the pip installer because they are quite large. While the TelFit code does not need the data files, the warning can be annoying to some (and pysynphot is a useful package in itself), so you should download the data files. They are available [here](http://www.stsci.edu/hst/observatory/crds/cdbs_throughput.html). Note that you will need to set the environment variable PYSYN_CDBS to point to the top-level directory of where you put the data.
+
+  *  ### An error occured during or immediately after the setup.py script tried to process dependencies. ###
+
+     I really have no idea what is causing this, but it appears to be an issue that occurs while checking the installation. So far when I have seen this error occur, the installation has indeed gone fine and TelFit is perfectly usable. Try the examples to make sure they work (especially fit_example). If they don't make sure you have all of the dependencies listed in the Manual correctly installed.
+
 
 {% endblock main %}
