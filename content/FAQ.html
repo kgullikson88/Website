@@ -53,5 +53,15 @@ Frequently Asked Questions
 
      I really have no idea what is causing this, but it appears to be an issue that occurs while checking the installation. So far when I have seen this error occur, the installation has indeed gone fine and TelFit is perfectly usable. Try the examples to make sure they work (especially fit_example). If they don't make sure you have all of the dependencies listed in the Manual correctly installed.
 
+  *  ### I want to use TelFit for low resolution (R < 10000) data ###
+
+     To do that, you will need to edit the code a little. Here is what you need to do, based on communication with a user.
+
+     *  Make sure you have TelFit v1.2 or later.
+     *  Open the 'TelluricFitter' code (it's in the src directory) in your favorite editor and change all instances of 'ReduceResolution' to 'ReduceResolution2'. The default function assumes small wavelength ranges, and uses a single Gaussian to broaden the telluric model. That isn't correct for low resolution spectra, where the wavelength range can be ~100 nm or more. ReduceResolution2 doesn't make that assumption, but is a little bit slower (because I can't use the well-optimized numpy.convolve function).
+     *  Finally, re-install TelFit with
+        <pre><code>python setup.py install</code></pre>
+
+     [Here](http://arxiv.org/abs/1406.7006) is an example of a paper that successfully used TelFit for low resolution spectra.
 
 {% endblock main %}

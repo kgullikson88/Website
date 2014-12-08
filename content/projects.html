@@ -23,7 +23,9 @@ description:
 ## An Object-Oriented Framework for Fitting the Telluric Absorption Spectrum ##
 <hr/>
 
-TelFit is a Python code I wrote specifically to fit the telluric absorption spectrum in astronomical data. I have been using it extensively in my project searching for companions to A and B stars, but it is sufficiently general that it should work on any data. The code is essentially a wrapper to [LBLRTM](http://rtweb.aer.com/lblrtm.html), the Line-By-Line Radiative Transfer Model. It vastly simplifies the process of generating a telluric model, and can efficiently remove the telluric absorption lines in my high-resolution echelle spectra of A and B stars. I have done some tests on late-type stellar spectra as well with good results. I am currently working on a paper officially announcing this code and describing it in some detail; check back here for the link once it is up! You can download the source code below, which includes both LBLRTM and my wrapper. See my [Github page](http://github.com/kgullikson88/Telluric-Fitter) for details and for the "bleeding edge" code.
+TelFit is a Python code I wrote specifically to fit the telluric absorption spectrum in astronomical data. I have been using it extensively in my project searching for companions to A and B stars, but it is sufficiently general that it should work on any data. The code is essentially a wrapper to [LBLRTM](http://rtweb.aer.com/lblrtm.html), the Line-By-Line Radiative Transfer Model. It vastly simplifies the process of generating a telluric model, and can efficiently remove the telluric absorption lines in my high-resolution optical and near-infrared echelle spectra of A and B stars. I have done some tests on late-type stellar spectra as well with good results.
+
+I recently published this code. You can access the paper [here](http://adsabs.harvard.edu/abs/2014AJ....148...53G).
 
 
 TelFit is packaged with LBLRTM. If you download TelFit, please also go [here](http://rtweb.aer.com/lblrtm_download.php) to inform the developers of LBLRTM. This helps them keep track of who is using the code and informs future code development.
@@ -33,7 +35,7 @@ I will try my best to respond to questions about/problems with the code. However
 
 If you have issues, please check the [FAQ page]({{ content_url('FAQ.html') }})
 
-### <a href={{ media_url('code/TelFit-1.0.tar.gz') }} onclick="var that=this;_gaq.push(['_trackEvent', 'Download', 'TelFit', this.href]);setTimeout(function(){location.href=that.href;},200);return false;">TelFit code</a>
+### <a href={{ media_url('code/TelFit-1.2.tar.gz') }} onclick="var that=this;_gaq.push(['_trackEvent', 'Download', 'TelFit', this.href]);setTimeout(function(){location.href=that.href;},200);return false;">TelFit code</a>
 ### [TelFit Manual (pdf)]({{ media_url('pdfs/TelFit_Manual.pdf') }})
 
 
