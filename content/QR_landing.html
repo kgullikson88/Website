@@ -1,0 +1,27 @@
+---
+extends: qr.j2
+title: Mobile Landing Page
+description: Landing page for QR codes
+---
+{% block header %}
+        <h1><a href="{{ content_url('') }}">Kevin Gullikson</a></h1>
+        <p align="left" style="font-size:80%;color:#000000;">
+        <img src="{{media_url('images/Kevin.jpg')}}">
+{% endblock header %}
+
+{% block main %}
+
+
+# [Download Poster]({{ media_url('pdfs/AAS2015_poster.pdf') }}) ##
+<br/>
+<br/>
+
+# <a href="mailto:kgulliks@astro.as.utexas.edu?subject=Regarding your 2015 AAS Poster">Email me</a> ##
+
+<br/>
+<br/>
+
+# [Main Website](http://www.as.utexas.edu/~kgulliks/index.html) ##
+
+
+{% endblock main %}
