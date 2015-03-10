@@ -64,4 +64,11 @@ Frequently Asked Questions
 
      [Here](http://arxiv.org/abs/1406.7006) is an example of a paper that successfully used TelFit for low resolution spectra.
 
+
+  *  ### I am encountering the following error: ###
+
+      Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
+
+    For some weird reason, newer versions of gfortran give this error message and cause TelFit to behave erratically. Use gfortran 4.8 or lower. This issue was raised on github [here](https://github.com/kgullikson88/Telluric-Fitter/issues/5).     
+
 {% endblock main %}
